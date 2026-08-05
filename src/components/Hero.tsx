@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
           <div className="absolute inset-[2px] rounded-full bg-[#08080c] z-10" />
           {/* Actual Avatar */}
           <img
-            src="/avatar.png"
+            src="/avatar.jpg"
             alt="Shubh Avatar"
             className="absolute inset-[6px] rounded-full w-[calc(100%-12px)] h-[calc(100%-12px)] object-cover z-20"
           />
