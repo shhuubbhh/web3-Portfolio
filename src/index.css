@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-brand-bg: #050816;
+  --color-brand-card: #111827;
+  --color-brand-purple: #7C3AED;
+  --color-brand-blue: #3B82F6;
+  --color-brand-success: #22C55E;
+  --color-brand-warning: #F59E0B;
+}
+
+/* Custom Web3 scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+/* Premium Animations & Glows */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glassmorphism details */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
+}
+
+/* Glowing text and borders */
+.glow-text-purple {
+  text-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.glow-border-purple {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
