@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-white/5 bg-[#050816] py-12 px-6">
+    <footer className="border-t border-white/5 bg-[#08080c] py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left Side: Logo & Tagline */}
         <div className="flex flex-col items-center md:items-start gap-2">
@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               S
             </div>
             <span className="font-display font-semibold text-sm tracking-tight text-white">
-              SUBHASH<span className="text-brand-purple font-bold">.</span>L1
+              SHUBH<span className="text-brand-purple font-bold">.</span>L1
             </span>
           </div>
           <p className="text-[11px] text-gray-500 font-sans mt-1">
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             Scroll to Epoch 0 <ArrowUp size={12} />
           </button>
           <span>
-            © {new Date().getFullYear()} Subhash Rajpurohit. All rights reserved.
+            © {new Date().getFullYear()} Shubh. All rights reserved.
           </span>
         </div>
       </div>

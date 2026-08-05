@@ -27,7 +27,7 @@ export const IdentityDashboard: React.FC = () => {
               <Terminal size={10} /> QUERY
             </div>
             <span className="font-mono text-xs text-gray-300 tracking-tight sm:text-sm">
-              https://explorer.subhash.l1/address/<span className="text-white font-semibold">subhash.eth</span>
+              https://explorer.shubh.l1/address/<span className="text-white font-semibold">shubh.eth</span>
             </span>
           </div>
           <div className="flex items-center gap-2 text-xs font-mono">
@@ -44,7 +44,7 @@ export const IdentityDashboard: React.FC = () => {
           <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/5 p-6 md:p-8 space-y-6">
             <div>
               <span className="text-[10px] font-mono text-gray-500 block mb-1">RESOLVED ADDRESS</span>
-              <span className="font-mono text-sm text-brand-purple font-semibold">0x7C3AED82F6...subhash.eth</span>
+              <span className="font-mono text-sm text-brand-purple font-semibold">0x7C3AED82F6...shubh.eth</span>
             </div>
 
             <div className="h-px bg-white/5" />

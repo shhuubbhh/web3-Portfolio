@@ -75,11 +75,11 @@ export const Hero: React.FC = () => {
         >
           {/* Animated gradient ring */}
           <div className="absolute inset-[-4px] rounded-full bg-gradient-to-tr from-brand-purple via-transparent to-brand-blue animate-spin-slow opacity-80" />
-          <div className="absolute inset-[2px] rounded-full bg-[#050816] z-10" />
+          <div className="absolute inset-[2px] rounded-full bg-[#08080c] z-10" />
           {/* Actual Avatar */}
           <img
             src="/avatar.png"
-            alt="Subhash Rajpurohit Avatar"
+            alt="Shubh Avatar"
             className="absolute inset-[6px] rounded-full w-[calc(100%-12px)] h-[calc(100%-12px)] object-cover z-20"
           />
         </motion.div>
@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-4"
         >
-          Subhash Rajpurohit
+          Shubh
         </motion.h1>
 
         {/* Dynamic Typing Title */}
