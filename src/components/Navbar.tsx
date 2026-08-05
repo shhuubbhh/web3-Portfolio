@@ -87,16 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             : 'bg-transparent py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo('home')}>
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-purple to-brand-blue flex items-center justify-center font-display font-bold text-white shadow-md shadow-brand-purple/20">
-              S
-            </div>
-            <span className="font-display font-semibold text-lg tracking-tight text-white">
-              SHUBH<span className="text-brand-purple font-bold">.</span>L1
-            </span>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-end">
 
           {/* Right Controls */}
           <div className="flex items-center gap-3">
