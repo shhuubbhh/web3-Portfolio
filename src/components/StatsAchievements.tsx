@@ -1,145 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Trophy, Star, ShieldCheck, Milestone } from 'lucide-react';
-
-interface StatProps {
-  label: string;
-  value: number;
-  suffix?: string;
-}
-
-const AnimatedCounter: React.FC<StatProps> = ({ label, value, suffix = '' }) => {
-  const [count, setCount] = useState(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  useEffect(() => {
-    if (inView) {
-      let start = 0;
-      const duration = 1500; // ms
-      const stepTime = Math.abs(Math.floor(duration / value));
-      
-      const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start >= value) {
-          clearInterval(timer);
-          setCount(value);
-        }
-      }, Math.max(stepTime, 20));
-
-      return () => clearInterval(timer);
-    }
-  }, [inView, value]);
-
-  return (
-    <div ref={ref} className="bg-black/20 border border-white/5 rounded-2xl p-6 text-center">
-      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2 tracking-tight">
-        {count}
-        <span className="text-brand-purple">{suffix}</span>
-      </div>
-      <div className="text-xs md:text-sm text-gray-400 font-mono tracking-wider uppercase">
-        {label}
-      </div>
-    </div>
-  );
-};
-
-interface AchievementCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  badge: string;
-  delay: number;
-}
-
-const AchievementCard: React.FC<AchievementCardProps> = ({ icon, title, description, badge, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col gap-4 text-left border border-white/5"
-    >
-      <div className="flex justify-between items-center">
-        <div className="w-10 h-10 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple">
-          {icon}
-        </div>
-        <span className="text-[10px] font-mono font-semibold bg-white/5 border border-white/5 px-2.5 py-1 rounded-full text-gray-400">
-          {badge}
-        </span>
-      </div>
-      <div>
-        <h3 className="font-display font-semibold text-white text-base mb-1.5">{title}</h3>
-        <p className="text-gray-400 text-xs leading-relaxed">{description}</p>
-      </div>
-    </motion.div>
-  );
-};
 
 export const StatsAchievements: React.FC = () => {
   const stats = [
-    { label: 'Ecosystems Contributed', value: 4 },
-    { label: 'Threads Published', value: 35, suffix: '+' },
-    { label: 'Tutorial Articles', value: 20 },
-    { label: 'Community Members Reached', value: 50, suffix: 'k+' },
+    { count: '4', label: 'Ecosystems Contributed' },
+    { count: '35+', label: 'Threads Published' },
+    { count: '20', label: 'Tutorial Articles' },
+    { count: '50k+', label: 'Community Reach' }
   ];
 
-  const achievements = [
-    {
-      icon: <Trophy size={18} />,
-      title: 'EthGlobal Hackathon Winner',
-      description: 'Awarded top 3 in EVM security and optimization pools for building the SolGuard static AST parser prototype.',
-      badge: 'Solidity Pool',
-    },
-    {
-      icon: <ShieldCheck size={18} />,
-      title: 'Certified Smart Contract Auditor',
-      description: 'Successfully passed rigorous security audits and tokenomics validations with industry partners.',
-      badge: 'EVM Audit',
-    },
-    {
-      icon: <Star size={18} />,
-      title: 'Top Contributor Award',
-      description: 'Honored by TxFlow Network Foundation for driving devnet community growth and authoring official validator manuals.',
-      badge: 'L1 Contributor',
-    },
-    {
-      icon: <Milestone size={18} />,
-      title: 'Cosmos SDK Fellowship',
-      description: 'Completed extensive training on Cosmos AppChain frameworks, IBC protocols, and CometBFT consensus engines.',
-      badge: 'IBC Protocol',
-    },
+  const milestones = [
+    { title: 'EthGlobal Hackathon Winner', desc: 'Top 3 in EVM security pools' },
+    { title: 'Smart Contract Auditor Cert', desc: 'EVM security & tokenomics validation' },
+    { title: 'TxFlow Contributor Award', desc: 'Validator documentation & community growth' },
+    { title: 'Cosmos SDK Fellowship', desc: 'AppChain, IBC & consensus training' }
   ];
 
   return (
-    <section id="achievements" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
-      {/* Title */}
-      <div className="text-left mb-16">
-        <span className="text-xs font-mono tracking-widest text-brand-purple uppercase mb-3 block">06 / Achievements</span>
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Metrics & Milestones</h2>
-        <div className="w-12 h-1 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full" />
-      </div>
+    <section id="achievements" className="py-20 px-6 max-w-5xl mx-auto border-t border-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+        {/* Left Column */}
+        <div className="md:col-span-4 text-left">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <span className="text-[10px] font-mono tracking-widest text-brand-purple uppercase mb-2 block">// 06. MILESTONES</span>
+            <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; metrics_</h2>
+            <div className="w-10 h-0.5 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full" />
+          </motion.div>
+        </div>
 
-      {/* Stats Counter Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        {stats.map((stat) => (
-          <AnimatedCounter key={stat.label} {...stat} />
-        ))}
-      </div>
+        {/* Right Column */}
+        <div className="md:col-span-8 space-y-10 text-left font-mono text-xs">
+          {/* Quick Stats Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="border border-white/5 bg-[#121216]/30 p-4 rounded-xl text-center">
+                <span className="text-xl font-display font-bold text-brand-purple block">{stat.count}</span>
+                <span className="text-[9px] text-gray-500 block uppercase mt-1 tracking-tight">{stat.label}</span>
+              </div>
+            ))}
+          </div>
 
-      {/* Achievements Subheading */}
-      <div className="text-left mb-10">
-        <h3 className="text-2xl font-display font-bold text-white mb-2">Ecosystem Recognition</h3>
-        <p className="text-gray-400 text-xs md:text-sm">Proof-of-Contribution badges and milestone achievements earned across networks.</p>
-      </div>
-
-      {/* Achievements Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {achievements.map((ach, idx) => (
-          <AchievementCard key={ach.title} {...ach} delay={idx * 0.1} />
-        ))}
+          {/* Milestones list */}
+          <div className="space-y-3 pt-4 border-t border-white/5">
+            <h3 className="font-display font-bold text-white text-sm mb-4 font-sans">&gt; proofs_</h3>
+            {milestones.map((m, idx) => (
+              <div key={idx} className="flex items-start gap-2 py-2 border-b border-white/5 last:border-b-0">
+                <span className="text-brand-purple">//</span>
+                <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <span className="text-gray-300 font-semibold">{m.title}</span>
+                  <span className="text-gray-500 text-[10px]">{m.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
