@@ -1,110 +1,164 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 export const BlockchainBg: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouseRef = useRef({ x: -1000, y: -1000, radius: 150 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      mouseRef.current.x = e.clientX;
+      mouseRef.current.y = e.clientY;
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current.x = -1000;
+      mouseRef.current.y = -1000;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationId: number;
+    let particles: Particle[] = [];
+    const maxParticles = 65;
+
+    class Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      baseSize: number;
+
+      constructor() {
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.baseSize = Math.random() * 2 + 1;
+        this.size = this.baseSize;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce on boundaries
+        if (this.x < 0 || this.x > canvas!.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas!.height) this.vy *= -1;
+
+        // Mouse interaction: attract or repel slightly
+        const dx = mouseRef.current.x - this.x;
+        const dy = mouseRef.current.y - this.y;
+        const distance = Math.hypot(dx, dy);
+
+        if (distance < mouseRef.current.radius) {
+          const force = (mouseRef.current.radius - distance) / mouseRef.current.radius;
+          this.x -= dx * force * 0.02;
+          this.y -= dy * force * 0.02;
+          this.size = this.baseSize + force * 2;
+        } else {
+          this.size = this.baseSize;
+        }
+      }
+
+      draw() {
+        if (!ctx) return;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.25)';
+        ctx.fill();
+      }
+    }
+
+    const init = () => {
+      particles = [];
+      for (let i = 0; i < maxParticles; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Render perspective lines grid
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
+      ctx.lineWidth = 1;
+      const gridSize = 60;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      // Update and draw nodes
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      // Connect nodes with lines (blockchain threads)
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.hypot(dx, dy);
+
+          if (distance < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            // Dynamic alpha based on distance
+            const alpha = (1 - distance / 120) * 0.08;
+            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationId);
     };
   }, []);
 
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden bg-[#08080c] pointer-events-none select-none">
-      {/* Dynamic Mouse radial glow */}
-      <div
-        className="absolute hidden md:block w-[600px] h-[600px] rounded-full blur-[150px] opacity-[0.05] transition-all duration-300 pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(148, 163, 184, 0.1) 50%, transparent 100%)',
-          left: mousePosition.x - 300,
-          top: mousePosition.y - 300,
-          position: 'fixed',
-        }}
-      />
+      {/* Glowing atmospheric gradient backdrops */}
+      <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-brand-purple/5 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-brand-blue/5 blur-[140px] pointer-events-none" />
 
-      {/* Static premium blobs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-purple/5 blur-[120px] animate-pulse-slow" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-blue/5 blur-[120px] animate-pulse-slow" style={{ animationDelay: '3s' }} />
-
-      {/* Modern Grid Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.1]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '45px 45px',
-        }}
-      />
-
-      {/* Subtle Blockchain network lines illustration */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="line-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#38BDF8" stopOpacity="1" />
-            <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        
-        {/* Nodes and Links */}
-        <circle cx="15%" cy="20%" r="2" fill="#38BDF8" />
-        <circle cx="25%" cy="35%" r="3" fill="#94A3B8" />
-        <circle cx="10%" cy="50%" r="2" fill="#38BDF8" />
-        <circle cx="30%" cy="65%" r="2.5" fill="#94A3B8" />
-        <circle cx="20%" cy="80%" r="3" fill="#38BDF8" />
-
-        <line x1="15%" y1="20%" x2="25%" y2="35%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="25%" y1="35%" x2="10%" y2="50%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="10%" y1="50%" x2="30%" y2="65%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="30%" y1="65%" x2="20%" y2="80%" stroke="#ffffff" strokeWidth="0.5" />
-
-        <circle cx="85%" cy="15%" r="2.5" fill="#94A3B8" />
-        <circle cx="75%" cy="30%" r="2" fill="#38BDF8" />
-        <circle cx="90%" cy="45%" r="3" fill="#94A3B8" />
-        <circle cx="80%" cy="60%" r="2" fill="#38BDF8" />
-        <circle cx="88%" cy="78%" r="3.5" fill="#94A3B8" />
-
-        <line x1="85%" y1="15%" x2="75%" y2="30%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="75%" y1="30%" x2="90%" y2="45%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="90%" y1="45%" x2="80%" y2="60%" stroke="#ffffff" strokeWidth="0.5" />
-        <line x1="80%" y1="60%" x2="88%" y2="78%" stroke="#ffffff" strokeWidth="0.5" />
-      </svg>
-
-      {/* Floating glowing particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-brand-purple/20"
-            style={{
-              width: Math.random() * 4 + 2,
-              height: Math.random() * 4 + 2,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.2, 0.7, 0.2],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {/* HTML5 Canvas for Living Blockchain Network */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
     </div>
   );
 };

@@ -66,23 +66,68 @@ export const Hero: React.FC = () => {
           <span className="tracking-wide">Available for Web3 Opportunities</span>
         </motion.div>
 
-        {/* Profile Image with Animated Rotating Glowing Ring */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, type: 'spring' }}
-          className="relative w-36 h-36 mb-6"
-        >
-          {/* Animated gradient ring */}
-          <div className="absolute inset-[-4px] rounded-full bg-gradient-to-tr from-brand-purple via-transparent to-brand-blue animate-spin-slow opacity-80" />
-          <div className="absolute inset-[2px] rounded-full bg-[#08080c] z-10" />
-          {/* Actual Avatar */}
-          <img
-            src="/avatar.jpg"
-            alt="Shubh Avatar"
-            className="absolute inset-[6px] rounded-full w-[calc(100%-12px)] h-[calc(100%-12px)] object-cover z-20"
-          />
-        </motion.div>
+        {/* Profile Image with Animated Rotating Glowing Ring & Floating Web3 Badges */}
+        <div className="relative mb-8 mt-4 select-none">
+          {/* Radar waves expanding behind profile */}
+          <div className="absolute inset-0 rounded-full border border-brand-purple/20 scale-125 animate-ping opacity-35" style={{ animationDuration: '3s' }} />
+          <div className="absolute inset-0 rounded-full border border-brand-blue/10 scale-150 animate-ping opacity-20" style={{ animationDuration: '4.5s' }} />
+
+          {/* Floating Web3 Badge: Top-Left */}
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute top-[-25px] left-[-75px] bg-[#121216]/80 border border-white/5 px-2.5 py-1 rounded-lg text-[9px] font-mono text-gray-400 backdrop-blur-sm shadow-lg flex items-center gap-1.5 z-30"
+          >
+            <span className="w-1 h-1 rounded-full bg-brand-purple" />
+            <span>0x7C3A...shubh.eth</span>
+          </motion.div>
+
+          {/* Floating Web3 Badge: Top-Right */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            className="absolute top-[-10px] right-[-65px] bg-[#121216]/80 border border-white/5 px-2.5 py-1 rounded-lg text-[9px] font-mono text-gray-400 backdrop-blur-sm shadow-lg flex items-center gap-1.5 z-30"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-success animate-pulse" />
+            <span>Node Active</span>
+          </motion.div>
+
+          {/* Floating Web3 Badge: Bottom-Left */}
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
+            className="absolute bottom-[-5px] left-[-60px] bg-[#121216]/80 border border-white/5 px-2.5 py-1 rounded-lg text-[9px] font-mono text-gray-400 backdrop-blur-sm shadow-lg flex items-center gap-1.5 z-30"
+          >
+            <span>Target: L1/L2</span>
+          </motion.div>
+
+          {/* Floating Web3 Badge: Bottom-Right */}
+          <motion.div
+            animate={{ y: [0, -7, 0] }}
+            transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
+            className="absolute bottom-[-15px] right-[-55px] bg-[#121216]/80 border border-white/5 px-2.5 py-1 rounded-lg text-[9px] font-mono text-gray-400 backdrop-blur-sm shadow-lg flex items-center gap-1.5 z-30"
+          >
+            <span>Gas: 12 gwei</span>
+          </motion.div>
+
+          {/* Inner profile wrapper */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, type: 'spring' }}
+            className="relative w-36 h-36"
+          >
+            {/* Animated gradient ring */}
+            <div className="absolute inset-[-4px] rounded-full bg-gradient-to-tr from-brand-purple via-transparent to-brand-blue animate-spin-slow opacity-80" />
+            <div className="absolute inset-[2px] rounded-full bg-[#08080c] z-10" />
+            {/* Actual Avatar */}
+            <img
+              src="/avatar.jpg"
+              alt="Shubh Avatar"
+              className="absolute inset-[6px] rounded-full w-[calc(100%-12px)] h-[calc(100%-12px)] object-cover z-20"
+            />
+          </motion.div>
+        </div>
 
         {/* Heading */}
         <motion.h1
