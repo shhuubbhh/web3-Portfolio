@@ -3,11 +3,9 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
-import { Community } from './components/Community';
 import { FeaturedContent } from './components/FeaturedContent';
 import { StatsAchievements } from './components/StatsAchievements';
 import { Skills } from './components/Skills';
-import { IdentityDashboard } from './components/IdentityDashboard';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -16,11 +14,9 @@ const sections = [
   'home',
   'about',
   'projects',
-  'community',
   'content',
   'achievements',
   'skills',
-  'identity',
   'testimonials',
   'contact',
 ];
@@ -39,11 +35,9 @@ function App() {
         <Hero />
         <About />
         <Projects />
-        <Community />
         <FeaturedContent />
         <StatsAchievements />
         <Skills />
-        <IdentityDashboard />
         <Testimonials />
         <Contact />
       </main>
