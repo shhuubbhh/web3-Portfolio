@@ -54,7 +54,7 @@ export const Projects: React.FC = () => {
             transition={{ duration: 0.4 }}
           >
             <span className="text-[10px] font-mono tracking-widest text-brand-purple uppercase mb-2 block">// 03. CODE</span>
-            <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; projects_</h2>
+            <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; ambassador_</h2>
             <div className="w-10 h-0.5 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full" />
           </motion.div>
         </div>

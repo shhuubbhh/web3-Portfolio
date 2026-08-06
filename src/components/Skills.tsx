@@ -9,11 +9,11 @@ interface SkillCategory {
 const skillsData: SkillCategory[] = [
   {
     title: 'Frontend Engine',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Ethers.js']
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
   },
   {
     title: 'Backend Systems',
-    skills: ['Node.js', 'Python', 'Go', 'Express', 'GraphQL']
+    skills: ['Node.js', 'Python']
   },
   {
     title: 'Blockchain / Cryptography',
@@ -25,7 +25,7 @@ const skillsData: SkillCategory[] = [
   },
   {
     title: 'Tools',
-    skills: ['Git', 'Docker', 'Linux', 'VS Code', 'GitHub Actions']
+    skills: ['Git', 'Docker', 'Linux', 'VS Code', 'Claude', 'Anti-gravity']
   }
 ];
 
@@ -42,7 +42,7 @@ export const Skills: React.FC = () => {
             transition={{ duration: 0.4 }}
           >
             <span className="text-[10px] font-mono tracking-widest text-brand-purple uppercase mb-2 block">// 07. CAPABILITIES</span>
-            <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; stack_</h2>
+            <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; skills_</h2>
             <div className="w-10 h-0.5 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full" />
           </motion.div>
         </div>
