@@ -5,23 +5,23 @@ export const About: React.FC = () => {
   const competencies = [
     {
       index: '01',
-      title: 'Community Architecture',
-      description: 'Designing incentivization loops, community governance structures, and validator onboarding programs.'
+      title: 'Community Growth',
+      description: 'Helping Web3 ecosystems grow by fostering engaged communities, creating educational initiatives, and building meaningful relationships between projects and users.'
     },
     {
       index: '02',
-      title: 'Protocol Research',
-      description: 'Deep diving into L2 rollup throughput, smart contract gas optimizations, and token distribution models.'
+      title: 'Community Operations',
+      description: 'Experienced in managing community interactions, organizing initiatives, supporting ecosystem campaigns, and creating an environment where contributors can thrive.'
     },
     {
       index: '03',
-      title: 'Developer Relations',
-      description: 'Orchestrating global ecosystem hackathons, structuring technical onboarding manuals, and handling developer grants.'
+      title: 'Building Products',
+      description: 'Exploring blockchain technologies by building practical Web3 applications and continuously improving my development skills to turn ideas into usable products.'
     },
     {
       index: '04',
-      title: 'Technical Content',
-      description: 'Translating complex cryptography and protocol specifications into highly engaging educational guides.'
+      title: 'Research & Education',
+      description: 'Simplifying complex blockchain concepts into actionable content, ecosystem research, and technical guides that help communities learn and participate with confidence.'
     }
   ];
 
@@ -79,7 +79,7 @@ export const About: React.FC = () => {
             className="text-gray-400 text-xs md:text-sm leading-relaxed space-y-4 pt-4 font-sans"
           >
             <p>
-              I stepped into Web3 driven by a fascination for permissionless infrastructure and decentralized systems. Since then, I have focused on bridging core protocol development with ecosystem growth, handling developer relations, protocol research, and builder incentive programs.
+              I entered Web3 driven by curiosity and stayed because of the people building it. My focus is on helping blockchain ecosystems grow through research, educational content, community engagement, and hands-on product exploration. Whether it's simplifying complex protocols, contributing to community initiatives, or building small products, I enjoy creating work that makes Web3 more accessible and valuable for everyone.
             </p>
           </motion.div>
         </div>
