@@ -10,18 +10,18 @@ interface WorkItem {
 const worksData: WorkItem[] = [
   {
     index: '01',
-    title: 'EthGlobal Hackathon Winner',
-    description: 'Placed Top 3 in EVM security pools, designing static smart contract analysis tools and AST analyzers.'
+    title: 'ArcLedger',
+    description: 'A merchant-focused payment management platform built for the Arc ecosystem, featuring wallet authentication, customer management, transaction tracking, and modern Web3 UX.'
   },
   {
     index: '02',
-    title: 'Smart Contract Auditor Certification',
-    description: 'Successfully validated expertise in EVM security auditing, threat modeling, and tokenomics structure validation.'
+    title: 'Mohalla',
+    description: 'A platform designed to connect people within local communities, making it easier to discover nearby events, businesses, and neighborhood discussions through a simple and scalable interface.'
   },
   {
     index: '03',
-    title: 'TxFlow Contributor Award',
-    description: 'Recognized for building extensive validator onboarding documentation and fostering ecosystem community growth.'
+    title: 'PolyScope',
+    description: 'A dashboard concept for tracking prediction markets, on-chain activity, and ecosystem insights with a focus on data visualization and user-friendly analytics.'
   },
   {
     index: '04',

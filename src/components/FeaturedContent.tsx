@@ -12,29 +12,29 @@ interface Contribution {
 const contributionsData: Contribution[] = [
   {
     index: '01',
-    title: 'Aztec Protocol Research',
-    description: 'Published in-depth research on zero-knowledge rollups, private state transitions, and developer documentation guides to make ZK-privacy accessible.',
+    title: '0G Labs',
+    description: 'Supported ecosystem growth through educational content, ambassador activities, campaign participation, and community engagement.',
     linkText: '[view_research]',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '02',
-    title: 'Midnight Network Onboarding',
-    description: 'Created comprehensive educational materials and tutorials to help developers build and deploy privacy-preserving smart contracts.',
+    title: 'Sentient AGI',
+    description: 'Participated in ecosystem initiatives, explored AI-powered decentralized infrastructure, and supported community engagement through research and discussions.',
     linkText: '[view_guides]',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '03',
-    title: '0G Labs Community Expansion',
-    description: 'Designed educational content and hosted community events to simplify and onboard builders into the AI-powered modular blockchain ecosystem.',
+    title: 'Fogo',
+    description: 'Created graphics, educational posts, community content, and actively participated in ecosystem campaigns while engaging with the community.',
     linkText: '[view_content]',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '04',
-    title: 'Open Source Security Tools',
-    description: 'Maintained and contributed to AST static analysis tooling to identify smart contract vulnerabilities and improve EVM gas efficiency.',
+    title: 'Arc',
+    description: 'Contributed through product development, educational content, ecosystem exploration, and community participation while building applications on the Arc network.',
     linkText: '[view_github]',
     url: 'https://github.com/shhuubbhh'
   }
