@@ -114,8 +114,63 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         </div>
       </header>
 
-      {/* Floating Bottom Navigation Dock */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[580px] pointer-events-none">
+      {/* Floating Right Navigation Dock */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 pointer-events-none hidden md:block">
+        <div className="glass-panel border border-white/10 rounded-2xl p-2.5 shadow-2xl flex flex-col items-center gap-1.5 pointer-events-auto">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            const isHovered = hoveredItem === item.id;
+
+            return (
+              <div
+                key={item.id}
+                className="relative flex items-center justify-center shrink-0"
+                onMouseEnter={() => setHoveredItem(item.id)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                {/* Tooltip text bubble to the left */}
+                <AnimatePresence>
+                  {isHovered && (
+                    <motion.div
+                      initial={{ opacity: 0, x: 10, scale: 0.8 }}
+                      animate={{ opacity: 1, x: 0, scale: 1 }}
+                      exit={{ opacity: 0, x: 10, scale: 0.8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-[#121216] border border-white/10 text-white text-[10px] font-mono font-semibold px-2 py-1 rounded-md shadow-lg pointer-events-none whitespace-nowrap z-50"
+                    >
+                      {item.label}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Nav Button */}
+                <button
+                  onClick={() => scrollTo(item.id)}
+                  className={`relative p-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
+                    isActive ? 'text-brand-purple' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  {/* Sliding capsule indicator background */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeDockIndicator"
+                      className="absolute inset-0 bg-white/5 rounded-xl border border-white/5"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  
+                  <span className="relative z-10 block hover:scale-110 transition-transform">
+                    {item.icon}
+                  </span>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Floating Bottom Navigation Dock for Mobile only */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[580px] pointer-events-none md:hidden">
         <div className="w-full glass-panel border border-white/10 rounded-2xl px-4 py-3 shadow-2xl flex items-center justify-between gap-1 overflow-x-auto no-scrollbar pointer-events-auto">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
@@ -153,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                   {/* Sliding capsule indicator background */}
                   {isActive && (
                     <motion.div
-                      layoutId="activeDockIndicator"
+                      layoutId="activeDockIndicatorMobile"
                       className="absolute inset-0 bg-white/5 rounded-xl border border-white/5"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />

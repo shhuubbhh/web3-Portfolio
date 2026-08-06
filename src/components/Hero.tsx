@@ -49,11 +49,11 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center relative pt-24 px-6 overflow-hidden">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative pt-24 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Subtle glowing radial background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] rounded-full bg-brand-purple/5 blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] rounded-full bg-brand-purple/5 blur-[150px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto text-center z-10 flex flex-col items-center">
+      <div className="max-w-4xl text-left z-10 flex flex-col items-start">
         {/* Available Badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {/* Profile Image with Radar Waves & Stats Badges */}
-        <div className="relative mb-12 select-none">
+        <div className="relative mb-12 select-none ml-24 md:ml-32">
           {/* Radar waves expanding behind profile */}
           <div className="absolute inset-0 rounded-full border border-brand-purple/10 scale-125 animate-ping opacity-30" style={{ animationDuration: '3.5s' }} />
           <div className="absolute inset-0 rounded-full border border-brand-blue/5 scale-150 animate-ping opacity-15" style={{ animationDuration: '5s' }} />
@@ -141,7 +141,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="h-10 mb-8 flex items-center justify-center font-mono text-sm md:text-base lg:text-lg text-gray-400"
+          className="h-10 mb-8 flex items-center justify-start font-mono text-sm md:text-base lg:text-lg text-gray-400"
         >
           <span className="text-brand-purple font-semibold">$ run shubh --status=active</span>
           <span className="mx-2 text-white font-medium">&gt; {currentText}</span>
@@ -153,7 +153,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mb-10 leading-relaxed font-sans"
+          className="text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mb-10 leading-relaxed font-sans text-left"
         >
           I help blockchain ecosystems grow through community architecture, developer relations, deep protocol research, and content strategy.
         </motion.p>
@@ -163,7 +163,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex gap-4 items-center justify-center font-mono text-xs md:text-sm"
+          className="flex gap-4 items-center justify-start font-mono text-xs md:text-sm"
         >
           <button
             onClick={handleScrollToProjects}
