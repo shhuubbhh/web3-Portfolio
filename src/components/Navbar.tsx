@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Brand Logo / Tag (Top Left) */}
-          <div className="bg-[#121216]/90 border border-white/10 px-4 py-2 rounded-lg text-sm md:text-base font-mono text-white font-bold tracking-widest uppercase select-none">
+          <div className="bg-brand-purple/10 border border-brand-purple/20 px-4 py-2 rounded-lg text-sm md:text-base font-mono text-brand-purple font-bold tracking-widest uppercase select-none">
             Shubh
           </div>
 
