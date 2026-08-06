@@ -13,27 +13,27 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'SolGuard CLI',
-    role: 'Lead Architect',
-    description: 'An open-source static AST analysis engine designed to detect security vulnerabilities in Solidity smart contracts.',
+    title: 'MidNight Network',
+    role: 'Community Ambassador',
+    description: 'Helping expand the Midnight ecosystem by engaging with the community, sharing educational content, participating in campaigns, and supporting ecosystem initiatives focused on privacy-preserving blockchain technology.',
     tech: ['Rust', 'Solidity', 'Web3.js'],
     githubUrl: 'https://github.com/shhuubbhh',
     demoUrl: 'https://github.com/shhuubbhh',
     caseStudyUrl: 'https://github.com/shhuubbhh'
   },
   {
-    title: 'GasOptimizer Dashboard',
-    role: 'Developer',
-    description: 'Interactive analytics dashboard designed to optimize EVM smart contract storage layouts and gas cost operations.',
+    title: 'Aztec',
+    role: 'Lead Technical Contributor',
+    description: 'Actively contributing to the Aztec ecosystem through educational content, ecosystem participation, protocol research, and community engagement around privacy and zero-knowledge technology.',
     tech: ['React', 'Ethers.js', 'Hardhat'],
     githubUrl: 'https://github.com/shhuubbhh',
     demoUrl: 'https://github.com/shhuubbhh',
     caseStudyUrl: 'https://github.com/shhuubbhh'
   },
   {
-    title: 'CrossChain Indexer',
-    role: 'Researcher',
-    description: 'Real-time indexing telemetry pipeline monitoring and visualizing cross-chain messaging events.',
+    title: '0G Labs',
+    role: 'Community Ambassador',
+    description: 'Supporting the AI-powered modular blockchain ecosystem by creating educational content, participating in campaigns, engaging with the community, and helping onboard new users.',
     tech: ['Go', 'GraphQL', 'Next.js'],
     githubUrl: 'https://github.com/shhuubbhh',
     demoUrl: 'https://github.com/shhuubbhh',
