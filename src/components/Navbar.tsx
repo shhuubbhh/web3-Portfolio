@@ -85,6 +85,11 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
 
           {/* Right Controls */}
           <div className="flex items-center gap-3">
+            {/* Brand Tag */}
+            <div className="bg-brand-purple/10 border border-brand-purple/20 px-3.5 py-1.5 rounded-full text-[10px] font-mono text-brand-purple font-bold tracking-widest uppercase select-none">
+              Shubh
+            </div>
+
             {/* Web3 Network Switcher style */}
             <div 
               onClick={() => setNetwork(prev => prev === 'mainnet' ? 'testnet' : 'mainnet')}
