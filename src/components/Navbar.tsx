@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { 
   Home, 
   User, 
-  History, 
   FolderGit2, 
   Share2, 
   BookOpen, 
