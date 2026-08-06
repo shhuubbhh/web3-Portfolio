@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
     { id: 'about', label: 'About', icon: <User size={18} /> },
     { id: 'projects', label: 'Projects', icon: <FolderGit2 size={18} /> },
     { id: 'community', label: 'Ecosystem', icon: <Share2 size={18} /> },
-    { id: 'content', label: 'Media', icon: <BookOpen size={18} /> },
+    { id: 'content', label: 'Contributions', icon: <BookOpen size={18} /> },
     { id: 'achievements', label: 'Awards', icon: <Trophy size={18} /> },
     { id: 'skills', label: 'Stack', icon: <Cpu size={18} /> },
     { id: 'identity', label: 'Scanner', icon: <Terminal size={18} /> },
