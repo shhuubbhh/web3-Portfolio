@@ -2,7 +2,6 @@ import { BlockchainBg } from './components/BlockchainBg';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Community } from './components/Community';
 import { FeaturedContent } from './components/FeaturedContent';
@@ -16,7 +15,6 @@ import { Footer } from './components/Footer';
 const sections = [
   'home',
   'about',
-  'experience',
   'projects',
   'community',
   'content',
@@ -40,7 +38,6 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Experience />
         <Projects />
         <Community />
         <FeaturedContent />

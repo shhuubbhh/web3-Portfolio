@@ -28,7 +28,6 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   const navItems = [
     { id: 'home', label: 'Home', icon: <Home size={18} /> },
     { id: 'about', label: 'About', icon: <User size={18} /> },
-    { id: 'experience', label: 'Ledger', icon: <History size={18} /> },
     { id: 'projects', label: 'Projects', icon: <FolderGit2 size={18} /> },
     { id: 'community', label: 'Ecosystem', icon: <Share2 size={18} /> },
     { id: 'content', label: 'Media', icon: <BookOpen size={18} /> },
