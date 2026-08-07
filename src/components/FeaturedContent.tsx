@@ -12,30 +12,30 @@ interface Contribution {
 const contributionsData: Contribution[] = [
   {
     index: '01',
-    title: '0G Labs',
-    description: 'Supported ecosystem growth through educational content, ambassador activities, campaign participation, and community engagement.',
-    linkText: '[view_research]',
+    title: 'Raiku',
+    description: 'Supporting ecosystem growth through educational content, Content development, campaign participation, and community engagement.',
+    linkText: '',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '02',
     title: 'Sentient AGI',
-    description: 'Participated in ecosystem initiatives, explored AI-powered decentralized infrastructure, and supported community engagement through research and discussions.',
-    linkText: '[view_guides]',
+    description: 'Participated in ecosystem initiatives, developed API based tools, and supported community engagement through research and discussions.',
+    linkText: '',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '03',
     title: 'Fogo',
     description: 'Created graphics, educational posts, community content, and actively participated in ecosystem campaigns while engaging with the community.',
-    linkText: '[view_content]',
+    linkText: '',
     url: 'https://github.com/shhuubbhh'
   },
   {
     index: '04',
     title: 'Arc',
-    description: 'Contributed through product development, educational content, ecosystem exploration, and community participation while building applications on the Arc network.',
-    linkText: '[view_github]',
+    description: 'Contributed through product development, educational content, and community participation while building applications such as ArcLedger on the Arc network.',
+    linkText: '',
     url: 'https://github.com/shhuubbhh'
   }
 ];
