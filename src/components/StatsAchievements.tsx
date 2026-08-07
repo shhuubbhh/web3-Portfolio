@@ -14,28 +14,28 @@ const worksData: WorkItem[] = [
     index: '01',
     title: 'ArcLedger',
     description: 'A merchant-focused payment management platform built for the Arc ecosystem, featuring wallet authentication, customer management, transaction tracking, and modern Web3 UX.',
-    linkText: 'github_',
+    linkText: 'Link',
     url: 'https://arc-ledger.pages.dev/'
   },
   {
     index: '02',
     title: 'Mohalla',
     description: 'A platform designed to connect people within local communities, making it easier to discover nearby events, businesses, and neighborhood discussions through a simple and scalable interface.',
-    linkText: 'github_',
+    linkText: 'Link',
     url: 'https://mohalla2.vercel.app/'
   },
   {
     index: '03',
     title: 'PolyScope',
     description: 'A dashboard concept for tracking prediction markets, on-chain activity, and track all the diffferent criteria of a user based on the activity on Polymarket.',
-    linkText: 'github_',
+    linkText: 'Link',
     url: 'https://poly-score.vercel.app/'
   },
   {
     index: '04',
     title: 'Raiku Handbook',
     description: 'A easy-to-understand guide from the official docs of Raiku to help community get better understanding of how Raiku works and how to use it.',
-    linkText: 'github_',
+    linkText: 'Link',
     url: 'https://www.raikuhandbook.org/'
   }
 ];

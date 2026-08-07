@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Home, 
-  User, 
-  FolderGit2, 
-  BookOpen, 
-  Trophy, 
-  Cpu, 
-  MessageSquare, 
+import {
+  Home,
+  User,
+  FolderGit2,
+  BookOpen,
+  Trophy,
+  Cpu,
+  MessageSquare,
   Send,
   ArrowUpRight
 } from 'lucide-react';
@@ -25,12 +25,12 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
   const navItems = [
     { id: 'home', label: 'Home', icon: <Home size={18} /> },
     { id: 'about', label: 'About', icon: <User size={18} /> },
-    { id: 'projects', label: 'Projects', icon: <FolderGit2 size={18} /> },
-    { id: 'content', label: 'Contributions', icon: <BookOpen size={18} /> },
-    { id: 'achievements', label: 'Works', icon: <Trophy size={18} /> },
-    { id: 'skills', label: 'Stack', icon: <Cpu size={18} /> },
-    { id: 'testimonials', label: 'Reviews', icon: <MessageSquare size={18} /> },
-    { id: 'contact', label: 'Connect', icon: <Send size={18} /> },
+    { id: 'projects', label: 'Ambassador', icon: <FolderGit2 size={18} /> },
+    { id: 'content', label: 'Ecosystem', icon: <BookOpen size={18} /> },
+    { id: 'achievements', label: 'Builder Works', icon: <Trophy size={18} /> },
+    { id: 'skills', label: 'Skills', icon: <Cpu size={18} /> },
+    { id: 'testimonials', label: 'Testimonials', icon: <MessageSquare size={18} /> },
+    { id: 'contact', label: 'Contact', icon: <Send size={18} /> },
   ];
 
   useEffect(() => {
@@ -75,11 +75,10 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
     <>
       {/* Sticky Top Utility Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
             ? 'bg-[#08080c]/60 backdrop-blur-md border-b border-white/5 py-3 shadow-lg shadow-black/10'
             : 'bg-transparent py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Brand Logo / Tag (Top Left) */}
@@ -90,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           {/* Right Controls */}
           <div className="flex items-center gap-3">
             {/* Web3 Network Switcher style */}
-            <div 
+            <div
               onClick={() => setNetwork(prev => prev === 'mainnet' ? 'testnet' : 'mainnet')}
               className="flex items-center gap-1.5 bg-black/40 border border-white/10 px-3 py-1.5 rounded-full text-[10px] font-mono cursor-pointer hover:border-brand-purple/50 transition-all"
             >
@@ -144,9 +143,8 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                 {/* Nav Button */}
                 <button
                   onClick={() => scrollTo(item.id)}
-                  className={`relative p-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
-                    isActive ? 'text-brand-purple' : 'text-gray-400 hover:text-white'
-                  }`}
+                  className={`relative p-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive ? 'text-brand-purple' : 'text-gray-400 hover:text-white'
+                    }`}
                 >
                   {/* Sliding capsule indicator background */}
                   {isActive && (
@@ -156,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
-                  
+
                   <span className="relative z-10 block hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
@@ -199,9 +197,8 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                 {/* Nav Button */}
                 <button
                   onClick={() => scrollTo(item.id)}
-                  className={`relative p-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
-                    isActive ? 'text-brand-purple' : 'text-gray-400 hover:text-white'
-                  }`}
+                  className={`relative p-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive ? 'text-brand-purple' : 'text-gray-400 hover:text-white'
+                    }`}
                 >
                   {/* Sliding capsule indicator background */}
                   {isActive && (
@@ -211,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
-                  
+
                   <span className="relative z-10 block hover:scale-110 transition-transform">
                     {item.icon}
                   </span>

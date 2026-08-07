@@ -5,10 +5,7 @@ interface Project {
   title: string;
   role: string;
   description: string;
-  tech: string[];
-  githubUrl: string;
-  demoUrl: string;
-  caseStudyUrl: string;
+
 }
 
 const projectsData: Project[] = [
@@ -16,28 +13,18 @@ const projectsData: Project[] = [
     title: 'MidNight Network',
     role: 'Community Ambassador',
     description: 'Helping expand the Midnight ecosystem by engaging with the community, sharing educational content, participating in campaigns, and supporting ecosystem initiatives focused on privacy-preserving blockchain technology.',
-    tech: ['Rust', 'Solidity', 'Web3.js'],
-    githubUrl: 'https://github.com/shhuubbhh',
-    demoUrl: 'https://github.com/shhuubbhh',
-    caseStudyUrl: 'https://github.com/shhuubbhh'
   },
   {
     title: 'Aztec',
     role: 'Lead Technical Contributor',
     description: 'Actively contributing to the Aztec ecosystem through educational content, ecosystem participation, protocol research, and community engagement around privacy and zero-knowledge technology.',
-    tech: ['React', 'Ethers.js', 'Hardhat'],
-    githubUrl: 'https://github.com/shhuubbhh',
-    demoUrl: 'https://github.com/shhuubbhh',
-    caseStudyUrl: 'https://github.com/shhuubbhh'
+
   },
   {
     title: '0G Labs',
     role: 'Community Ambassador',
     description: 'Supporting the AI-powered modular blockchain ecosystem by creating educational content, participating in campaigns, engaging with the community, and helping onboard new users.',
-    tech: ['Go', 'GraphQL', 'Next.js'],
-    githubUrl: 'https://github.com/shhuubbhh',
-    demoUrl: 'https://github.com/shhuubbhh',
-    caseStudyUrl: 'https://github.com/shhuubbhh'
+
   }
 ];
 
@@ -75,29 +62,7 @@ export const Projects: React.FC = () => {
                   <h3 className="font-display font-bold text-base text-white">{proj.title}</h3>
                   <span className="font-mono text-[9px] text-gray-500">{proj.role}</span>
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed mb-4">{proj.description}</p>
-              </div>
-
-              <div className="flex items-center justify-between pt-3 border-t border-white/5 font-mono text-[10px]">
-                {/* Tech Badges */}
-                <div className="flex gap-2">
-                  {proj.tech.map((t) => (
-                    <span key={t} className="text-gray-500">#{t.toLowerCase()}</span>
-                  ))}
-                </div>
-
-                {/* Direct Action triggers */}
-                <div className="flex gap-3 text-brand-blue">
-                  <a href={proj.githubUrl} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                    [code]
-                  </a>
-                  <a href={proj.demoUrl} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                    [sandbox]
-                  </a>
-                  <a href={proj.caseStudyUrl} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-                    [spec]
-                  </a>
-                </div>
+                <p className="text-gray-400 text-xs leading-relaxed">{proj.description}</p>
               </div>
             </motion.div>
           ))}
