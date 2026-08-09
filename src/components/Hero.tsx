@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative pt-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section id="home" className="min-h-[85vh] flex flex-col justify-center items-start relative py-12 md:py-16 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Subtle glowing radial background */}
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] rounded-full bg-brand-purple/5 blur-[150px] pointer-events-none" />
 
@@ -152,7 +152,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Description and Call to Actions */}
-        <div className="lg:col-span-5 flex flex-col items-start lg:pt-20">
+        <div className="lg:col-span-5 flex flex-col items-start lg:pt-0">
           {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
