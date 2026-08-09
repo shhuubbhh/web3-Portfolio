@@ -13,19 +13,19 @@ const projectsData: Project[] = [
     title: 'MidNight Network',
     role: 'Community Ambassador',
     description: 'Helping expand the Midnight ecosystem by engaging with the community, sharing educational content, participating in campaigns, and supporting ecosystem initiatives focused on privacy-preserving blockchain technology.',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80'
+    image: '/src/mid.jpg'
   },
   {
     title: 'Aztec',
     role: 'Lead Technical Contributor',
     description: 'Actively contributing to the Aztec ecosystem through educational content, ecosystem participation, protocol research, and community engagement around privacy and zero-knowledge technology.',
-    image: 'https://images.unsplash.com/photo-1630839437035-dac17da580d0?auto=format&fit=crop&w=600&q=80'
+    image: '/src/aztec.jpg'
   },
   {
     title: '0G Labs',
     role: 'Community Ambassador',
     description: 'Supporting the AI-powered modular blockchain ecosystem by creating educational content, participating in campaigns, engaging with the community, and helping onboard new users.',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'
+    image: '/src/0g.jpg'
   }
 ];
 
@@ -59,8 +59,8 @@ export const Projects: React.FC = () => {
             className="border border-white/5 bg-[#121216]/30 p-5 rounded-xl flex flex-col justify-between hover:border-brand-purple/20 transition-all overflow-hidden"
           >
             <div>
-              <img 
-                src={proj.image} 
+              <img
+                src={proj.image}
                 alt={proj.title}
                 className="w-full h-32 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity"
               />
