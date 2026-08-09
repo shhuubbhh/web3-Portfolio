@@ -16,11 +16,11 @@ const skillsData: SkillCategory[] = [
     skills: ['Node.js', 'Python']
   },
   {
-    title: 'Blockchain / Cryptography',
+    title: 'Blockchain Cryptography',
     skills: ['Ethereum', 'Solana', 'Solidity', 'Rust', 'Smart Contracts']
   },
   {
-    title: 'Growth / Research',
+    title: 'Growth Research',
     skills: ['Technical Research', 'Content Strategy', 'Community Architecture', 'Developer Relations']
   },
   {
