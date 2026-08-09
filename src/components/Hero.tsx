@@ -68,16 +68,16 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           {/* Profile Image with Radar Waves & Stats Badges */}
-          <div className="relative mb-6 select-none ml-16 md:ml-24">
+          <div className="relative mb-6 select-none ml-12 md:ml-20">
             {/* Radar waves expanding behind profile */}
-            <div className="absolute inset-0 rounded-2xl border border-brand-purple/10 scale-125 animate-ping opacity-30" style={{ animationDuration: '3.5s' }} />
-            <div className="absolute inset-0 rounded-2xl border border-brand-blue/5 scale-150 animate-ping opacity-15" style={{ animationDuration: '5s' }} />
+            <div className="absolute inset-0 rounded-2xl border border-brand-purple/10 scale-[1.35] animate-ping opacity-30" style={{ animationDuration: '3.5s' }} />
+            <div className="absolute inset-0 rounded-2xl border border-brand-blue/5 scale-[1.6] animate-ping opacity-15" style={{ animationDuration: '5s' }} />
 
             {/* Floating Web3 Badge: Top-Left */}
             <motion.div
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-[-15px] left-[-70px] md:left-[-100px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
+              className="absolute top-[-15px] left-[-50px] md:left-[-70px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-purple" />
               <span>0x7C3A...shubh.eth</span>
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute top-[-5px] right-[-65px] md:right-[-85px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
+              className="absolute top-[-5px] right-[-50px] md:right-[-70px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-success animate-pulse" />
               <span>Node Active</span>
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, -3, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
-              className="absolute bottom-[5px] left-[-65px] md:left-[-85px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
+              className="absolute bottom-[5px] left-[-50px] md:left-[-70px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
             >
               <span>Target: L1/L2</span>
             </motion.div>
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
-              className="absolute bottom-[-5px] right-[-60px] md:right-[-75px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
+              className="absolute bottom-[-5px] right-[-45px] md:right-[-60px] bg-[#121216]/90 border border-white/5 px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-mono text-gray-400 backdrop-blur-sm shadow-md flex items-center gap-1.5 z-30"
             >
               <span>Gas: 12 gwei</span>
             </motion.div>
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, type: 'spring' }}
-              className="relative w-56 h-56 md:w-64 md:h-64"
+              className="relative w-64 h-64 md:w-80 md:h-80"
             >
               <div className="absolute inset-[-4px] rounded-2xl bg-gradient-to-tr from-brand-purple/50 via-transparent to-brand-blue/50 animate-spin-slow opacity-80" />
               <div className="absolute inset-[1px] rounded-2xl bg-[#08080c] z-10" />
