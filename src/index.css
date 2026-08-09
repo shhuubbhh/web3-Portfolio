@@ -97,3 +97,41 @@
 .glow-border-purple {
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
 }
+
+/* Increase body font size of all sections except Hero (#home) */
+section:not(#home) {
+  font-size: calc(1rem + 4px) !important;
+}
+section:not(#home) .text-\[10px\] {
+  font-size: 14px !important;
+}
+section:not(#home) .text-\[11px\] {
+  font-size: 15px !important;
+}
+section:not(#home) .text-xs {
+  font-size: 16px !important;
+}
+section:not(#home) .text-sm {
+  font-size: 18px !important;
+}
+section:not(#home) .text-base {
+  font-size: 20px !important;
+}
+section:not(#home) .text-lg {
+  font-size: 22px !important;
+}
+section:not(#home) .text-xl {
+  font-size: 24px !important;
+}
+section:not(#home) .text-2xl {
+  font-size: 28px !important;
+}
+section:not(#home) .text-3xl {
+  font-size: 34px !important;
+}
+section:not(#home) .text-4xl {
+  font-size: 40px !important;
+}
+section:not(#home) .text-5xl {
+  font-size: 52px !important;
+}
