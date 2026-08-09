@@ -50,7 +50,7 @@ export const About: React.FC = () => {
           className="text-gray-400 text-xs md:text-sm leading-relaxed max-w-3xl mx-auto font-sans mt-4"
         >
           <p>
-            I entered Web3 driven by curiosity and stayed because of the people building it. My focus is on helping blockchain ecosystems grow through research, educational content, community engagement, and hands-on product exploration. Whether it's simplifying complex protocols, contributing to community initiatives, or building small products, I enjoy creating work that makes Web3 more accessible and valuable for everyone.
+            I entered Web3 out of curiosity and stayed to contribute to the people and ecosystems shaping its future. I focus on blockchain research, educational content, community growth, and hands-on product exploration to make Web3 more accessible and impactful.
           </p>
         </motion.div>
       </div>
