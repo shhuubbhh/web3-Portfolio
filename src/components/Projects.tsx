@@ -13,19 +13,19 @@ const projectsData: Project[] = [
     title: 'MidNight Network',
     role: 'Community Ambassador',
     description: 'Helping expand the Midnight ecosystem by engaging with the community, sharing educational content, participating in campaigns, and supporting ecosystem initiatives focused on privacy-preserving blockchain technology.',
-    image: '/src/mid.jpg'
+    image: '/mid.jpg'
   },
   {
     title: 'Aztec',
     role: 'Lead Technical Contributor',
     description: 'Actively contributing to the Aztec ecosystem through educational content, ecosystem participation, protocol research, and community engagement around privacy and zero-knowledge technology.',
-    image: '/src/aztec.jpg'
+    image: '/aztec.jpg'
   },
   {
     title: '0G Labs',
     role: 'Community Ambassador',
     description: 'Supporting the AI-powered modular blockchain ecosystem by creating educational content, participating in campaigns, engaging with the community, and helping onboard new users.',
-    image: '/src/0g.jpg'
+    image: '/0g.jpg'
   }
 ];
 

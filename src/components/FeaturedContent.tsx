@@ -17,7 +17,7 @@ const contributionsData: Contribution[] = [
     description: 'Supporting ecosystem growth through educational content, Content development, campaign participation, and community engagement.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: '/src/raiku.jpg'
+    image: '/raiku.jpg'
   },
   {
     index: '02',
@@ -25,7 +25,7 @@ const contributionsData: Contribution[] = [
     description: 'Participated in ecosystem initiatives, developed API based tools, and supported community engagement through research and discussions.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: '/src/senti.jpg'
+    image: '/senti.jpg'
   },
   {
     index: '03',
@@ -33,7 +33,7 @@ const contributionsData: Contribution[] = [
     description: 'Created graphics, educational posts, community content, and actively participated in ecosystem campaigns while engaging with the community.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: '/src/fogo.jpg'
+    image: '/fogo.jpg'
   },
   {
     index: '04',
@@ -41,7 +41,7 @@ const contributionsData: Contribution[] = [
     description: 'Contributed through product development, educational content, and community participation while building applications such as ArcLedger on the Arc network.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: '/src/arc.jpg'
+    image: '/arc.jpg'
   }
 ];
 
