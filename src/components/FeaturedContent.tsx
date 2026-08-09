@@ -47,7 +47,7 @@ const contributionsData: Contribution[] = [
 
 export const FeaturedContent: React.FC = () => {
   return (
-    <section id="content" className="py-20 px-6 max-w-5xl mx-auto border-t border-white/5 font-sans">
+    <section id="content" className="py-20 px-6 max-w-6xl mx-auto border-t border-white/5 font-sans">
       {/* Top Header Centered */}
       <div className="text-center mb-12">
         <motion.div
@@ -64,7 +64,7 @@ export const FeaturedContent: React.FC = () => {
       </div>
 
       {/* Horizontal Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
         {contributionsData.map((item, idx) => (
           <motion.div
             key={item.index}
@@ -78,7 +78,7 @@ export const FeaturedContent: React.FC = () => {
               <img 
                 src={item.image} 
                 alt={item.title}
-                className="w-full h-28 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity"
+                className="w-full h-48 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity"
               />
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-mono text-[9px] text-brand-purple tracking-widest group-hover:glow-text-purple transition-all shrink-0">
