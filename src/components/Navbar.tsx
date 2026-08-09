@@ -111,9 +111,9 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
         </div>
       </header>
 
-      {/* Floating Right Navigation Dock */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 pointer-events-none hidden md:block">
-        <div className="glass-panel border border-white/10 rounded-2xl p-2.5 shadow-2xl flex flex-col items-center gap-1.5 pointer-events-auto">
+      {/* Floating Bottom Navigation Dock for Desktop */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-auto pointer-events-none hidden md:block">
+        <div className="glass-panel border border-white/10 rounded-2xl p-2.5 shadow-2xl flex flex-row items-center gap-1.5 pointer-events-auto">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             const isHovered = hoveredItem === item.id;
@@ -121,19 +121,19 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
             return (
               <div
                 key={item.id}
-                className="relative flex items-center justify-center shrink-0"
+                className="relative flex items-center justify-center shrink-0 animate-fade-in"
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                {/* Tooltip text bubble to the left */}
+                {/* Tooltip text bubble above */}
                 <AnimatePresence>
                   {isHovered && (
                     <motion.div
-                      initial={{ opacity: 0, x: 10, scale: 0.8 }}
-                      animate={{ opacity: 1, x: 0, scale: 1 }}
-                      exit={{ opacity: 0, x: 10, scale: 0.8 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                      animate={{ opacity: 1, y: -45, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-[#121216] border border-white/10 text-white text-[10px] font-mono font-semibold px-2 py-1 rounded-md shadow-lg pointer-events-none whitespace-nowrap z-50"
+                      className="absolute bg-[#121216] border border-white/10 text-white text-[10px] font-mono font-semibold px-2 py-1 rounded-md shadow-lg pointer-events-none whitespace-nowrap z-50"
                     >
                       {item.label}
                     </motion.div>
