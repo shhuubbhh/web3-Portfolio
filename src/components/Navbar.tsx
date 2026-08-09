@@ -105,7 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
               }}
               className="flex items-center gap-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-[11px] font-semibold px-4 py-2 rounded-full transition-all"
             >
-              Download CV <ArrowUpRight size={12} />
+              Connect <ArrowUpRight size={12} />
             </a>
           </div>
         </div>
