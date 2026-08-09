@@ -17,7 +17,7 @@ const contributionsData: Contribution[] = [
     description: 'Supporting ecosystem growth through educational content, Content development, campaign participation, and community engagement.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80'
+    image: '/src/raiku.jpg'
   },
   {
     index: '02',
@@ -25,7 +25,7 @@ const contributionsData: Contribution[] = [
     description: 'Participated in ecosystem initiatives, developed API based tools, and supported community engagement through research and discussions.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80'
+    image: '/src/senti.jpg'
   },
   {
     index: '03',
@@ -33,7 +33,7 @@ const contributionsData: Contribution[] = [
     description: 'Created graphics, educational posts, community content, and actively participated in ecosystem campaigns while engaging with the community.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: 'https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&w=600&q=80'
+    image: '/src/fogo.jpg'
   },
   {
     index: '04',
@@ -41,7 +41,7 @@ const contributionsData: Contribution[] = [
     description: 'Contributed through product development, educational content, and community participation while building applications such as ArcLedger on the Arc network.',
     linkText: '',
     url: 'https://github.com/shhuubbhh',
-    image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80'
+    image: '/src/arc.jpg'
   }
 ];
 
@@ -75,8 +75,8 @@ export const FeaturedContent: React.FC = () => {
             className="border border-white/5 bg-[#121216]/30 p-5 rounded-xl flex flex-col justify-between hover:border-brand-purple/20 transition-all overflow-hidden group"
           >
             <div>
-              <img 
-                src={item.image} 
+              <img
+                src={item.image}
                 alt={item.title}
                 className="w-full h-32 object-cover rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity"
               />
