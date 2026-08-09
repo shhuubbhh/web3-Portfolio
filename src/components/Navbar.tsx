@@ -6,7 +6,7 @@ import {
   BookOpen,
   Trophy,
   Cpu,
-  MessageSquare,
+  // MessageSquare,
   Send,
   ArrowUpRight
 } from 'lucide-react';
@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ sections }) => {
     { id: 'content', label: 'Ecosystem', icon: <BookOpen size={18} /> },
     { id: 'achievements', label: 'Builder Works', icon: <Trophy size={18} /> },
     { id: 'skills', label: 'Skills', icon: <Cpu size={18} /> },
-    { id: 'testimonials', label: 'Testimonials', icon: <MessageSquare size={18} /> },
+    // { id: 'testimonials', label: 'Testimonials', icon: <MessageSquare size={18} /> },
     { id: 'contact', label: 'Contact', icon: <Send size={18} /> },
   ];
 

@@ -6,7 +6,7 @@ import { Projects } from './components/Projects';
 import { FeaturedContent } from './components/FeaturedContent';
 import { StatsAchievements } from './components/StatsAchievements';
 import { Skills } from './components/Skills';
-import { Testimonials } from './components/Testimonials';
+// import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -17,7 +17,7 @@ const sections = [
   'content',
   'achievements',
   'skills',
-  'testimonials',
+  // 'testimonials',
   'contact',
 ];
 
@@ -38,7 +38,7 @@ function App() {
         <FeaturedContent />
         <StatsAchievements />
         <Skills />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
 
