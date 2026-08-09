@@ -40,9 +40,22 @@ export const About: React.FC = () => {
           <h2 className="text-3xl font-display font-bold text-white mb-4">&gt; about_</h2>
           <div className="w-10 h-0.5 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full mb-6" />
         </motion.div>
+
+        {/* Simple Concise Bio Paragraph placed just below heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="text-gray-400 text-xs md:text-sm leading-relaxed max-w-3xl mx-auto font-sans mt-4"
+        >
+          <p>
+            I entered Web3 driven by curiosity and stayed because of the people building it. My focus is on helping blockchain ecosystems grow through research, educational content, community engagement, and hands-on product exploration. Whether it's simplifying complex protocols, contributing to community initiatives, or building small products, I enjoy creating work that makes Web3 more accessible and valuable for everyone.
+          </p>
+        </motion.div>
       </div>
 
-      {/* Competencies Grid & Bio in horizontal alignment */}
+      {/* Competencies Grid in horizontal alignment */}
       <div className="flex flex-col gap-12 text-left">
         {/* Competency List in 2x2 or 4 column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -69,19 +82,6 @@ export const About: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Simple Concise Bio Paragraph */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-gray-400 text-xs md:text-sm leading-relaxed space-y-4 pt-4 border-t border-white/5 font-sans text-center max-w-3xl mx-auto"
-        >
-          <p>
-            I entered Web3 driven by curiosity and stayed because of the people building it. My focus is on helping blockchain ecosystems grow through research, educational content, community engagement, and hands-on product exploration. Whether it's simplifying complex protocols, contributing to community initiatives, or building small products, I enjoy creating work that makes Web3 more accessible and valuable for everyone.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
