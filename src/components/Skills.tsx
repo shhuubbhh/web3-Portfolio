@@ -56,12 +56,12 @@ export const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: catIdx * 0.05 }}
-              className="border border-white/5 bg-[#121216]/30 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-brand-purple/20 transition-all"
+              className="border border-white/5 bg-[#121216]/30 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-12 gap-4 items-center hover:border-brand-purple/20 transition-all"
             >
-              <span className="text-gray-500 font-semibold text-[10px] uppercase">
+              <span className="text-gray-500 font-semibold text-[10px] uppercase sm:col-span-4">
                 // {category.title.toLowerCase().replace(/\s+/g, '_')}
               </span>
-              <div className="flex flex-wrap gap-1.5 text-gray-300">
+              <div className="flex flex-wrap gap-1.5 text-gray-300 sm:col-span-8">
                 {category.skills.map((skill) => (
                   <span key={skill} className="bg-white/5 px-2 py-0.5 rounded">
                     {skill}
