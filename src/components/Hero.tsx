@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-[85vh] flex flex-col justify-center items-start relative py-12 md:py-16 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative pt-24 pb-16 px-6 md:px-16 lg:px-24 overflow-hidden">
       {/* Subtle glowing radial background */}
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] rounded-full bg-brand-purple/5 blur-[150px] pointer-events-none" />
 
@@ -61,14 +61,14 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 bg-brand-success/5 border border-brand-success/15 px-4 py-1.5 rounded-full text-xs font-mono text-brand-success mb-10"
+            className="inline-flex items-center gap-2 bg-brand-success/5 border border-brand-success/15 px-4 py-1.5 rounded-full text-xs font-mono text-brand-success mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-success animate-pulse" />
             <span className="tracking-wide font-medium">AVAILABLE_FOR_OPPORTUNITIES</span>
           </motion.div>
 
           {/* Profile Image with Radar Waves & Stats Badges */}
-          <div className="relative mb-12 select-none ml-20 md:ml-28">
+          <div className="relative mb-6 select-none ml-20 md:ml-28">
             {/* Radar waves expanding behind profile */}
             <div className="absolute inset-0 rounded-full border border-brand-purple/10 scale-125 animate-ping opacity-30" style={{ animationDuration: '3.5s' }} />
             <div className="absolute inset-0 rounded-full border border-brand-blue/5 scale-150 animate-ping opacity-15" style={{ animationDuration: '5s' }} />
@@ -158,7 +158,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mb-10 leading-relaxed font-sans text-left"
+            className="text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mb-6 leading-relaxed font-sans text-left"
           >
             I help blockchain ecosystems grow through community architecture, developer relations, deep protocol research, and content strategy.
           </motion.p>
